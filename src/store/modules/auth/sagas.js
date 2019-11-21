@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import history from '~/services/history';
 import api from '~/services/api';
 
-import { signFailure, signInSucess } from './actions';
+import { signFailure, signInSuccess } from './actions';
 
 export function* signIn({ payload }) {
   try {
@@ -23,7 +23,7 @@ export function* signIn({ payload }) {
 
     api.defaults.headers['Authorization'] = `Bearer ${token}`;
 
-    yield put(signInSucess(token, user));
+    yield put(signInSuccess(token, user));
 
     history.push('/dashboard');
   } catch (err) {
