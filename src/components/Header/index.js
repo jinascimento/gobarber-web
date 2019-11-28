@@ -1,10 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logoPurple from '../../assets/logo_purple.svg';
 import { Container, Content, Profile } from './styles';
 import Notifications from '../Notifications/index';
 
 export default function Header() {
+  const profile = useSelector(state => state.user.profile);
+
   return (
     <Container>
       <Content>
